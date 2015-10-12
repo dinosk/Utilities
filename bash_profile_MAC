@@ -1,0 +1,78 @@
+# aliases
+alias cd..="cd .."
+alias l="ls -a"
+alias ll="ls -al"
+alias h=history
+alias cl=clear
+alias cdv="cd ~/.virtualenvs/nextnewstructure/"
+alias act="source activate homeenv"
+alias ip="ipython"
+alias tum="cd ~/Documents/MUNICH/TUM/"
+alias eso="cd ~/esohome/pyspeckit"
+alias subl.="subl ."
+alias ptest="python setup.py test"
+alias pyspectest="cd ~/esohome/pyspeckit/pyspeckit/tests/"
+alias co="git checkout"
+alias push="git push"
+alias br="git branch"
+alias prakt="cd ~/Documents/MUNICH/TUM/SS15/Praktikum/Problem\ Sets"
+alias cppp="g++ −Wall −O2 −std=c++11 −pipe −DONLINE JUDGE −DDOMJUDGE ”$@”"
+
+# pip should only run if there is a virtualenv currently activated
+export PIP_REQUIRE_VIRTUALENV=false
+# cache pip-installed packages to avoid re-downloading
+export PIP_DOWNLOAD_CACHE=$HOME/.pip/cache
+
+#UTF-8 Locale
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+
+export CLICOLOR=1
+export LSCOLORS=GxFxCxDxBxegedabagaced
+
+syspip(){
+    PIP_REQUIRE_VIRTUALENV="" pip "$@"
+}
+
+##
+# Your previous /Users/dinossimpson/.bash_profile file was backed up as /Users/dinossimpson/.bash_profile.macports-saved_2013-11-04_at_12:59:59
+##
+
+# MacPorts Installer addition on 2013-11-04_at_12:59:59: adding an appropriate PATH variable for use with MacPorts.
+export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+# Finished adapting your PATH environment variable for use with MacPorts.
+# mysql 
+PATH=/usr/local/mysql/bin:$PATH
+export PATH=/usr/local/mysql/bin:/opt/local/bin:/opt/local/sbin:/opt/local/bin:/opt/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/git/bin:/usr/local/mysql/bin
+export PATH=/usr/local/bin:$PATH
+
+source ~/.git-completion.bash
+source ~/.git-prompt.sh
+
+MAGENTA="\[\033[0;35m\]"
+YELLOW="\[\033[0;33m\]"
+BLUE="\[\033[34m\]"
+LIGHT_GRAY="\[\033[0;37m\]"
+CYAN="\[\033[0;36m\]"
+GREEN="\[\033[0;32m\]"
+Color_Off='\e[0m'
+GIT_PS1_SHOWDIRTYSTATE=true
+export LS_OPTIONS='--color=auto'
+export CLICOLOR='Yes'
+export LSCOLORS=gxfxbEaEBxxEhEhBaDaCaD
+
+export PS1=$LIGHT_GRAY"\u"'$(
+    if [[ $(__git_ps1) =~ \*\)$ ]]
+    # a file has been modified but not added
+    then echo "'$YELLOW'"$(__git_ps1 " (%s)")
+    elif [[ $(__git_ps1) =~ \+\)$ ]]
+    # a file has been added, but not commited
+    then echo "'$MAGENTA'"$(__git_ps1 " (%s)")
+    # the state is clean, changes are commited
+    else echo "'$CYAN'"$(__git_ps1 " (%s)")
+    fi)'$CYAN" \w"$Color_Off": "
+
+alias gg='git status -s'
+
+# added by Anaconda 2.1.0 installer
+export PATH="/Users/dinossimpson/anaconda/bin:$PATH"
