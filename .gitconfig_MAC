@@ -1,0 +1,51 @@
+[user]	
+	name = Dinos Kousidis
+	email = dinos.kousidis@tum.de
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+	grep = auto
+	ui = true
+[core]
+	excludesfile = /home/dinossimpson/.gitignore_global
+[giggle]
+	main-window-maximized = true
+	main-window-geometry = 0x0+0+0
+	file-view-hpane-position = 466
+	file-view-vpane-position = 804
+	main-window-view = HistoryView
+	show-graph = true
+	history-view-vpane-position = 549
+[alias]
+    k = log --graph --decorate --pretty=oneline --abbrev-commit
+    kl = log --graph --decorate --abbrev-commit
+    g = grep -n
+    st = status
+    ci = commit
+    cia = commit --amend
+    co = checkout
+    br = branch
+    sb = show-branch
+    cp = cherry-pick
+    staged = diff --cached
+    rb = rebase
+    rbc = rebase --continue
+    rbs = rebase --skip
+    rl = reflog
+    rs = remote show
+    rt = remote
+    ru = remote update
+    rp = remote prune
+    sm = submodule
+    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+    fixup = !sh -c 'git commit -m \"fixup! $(git log -1 --format='\\''%s'\\'' $@)\"' -
+    squash = !sh -c 'git commit -m \"squash! $(git log -1 --format='\\''%s'\\'' $@)\"' -
+    ri = rebase --interactive --autosquash
+    mf = merge --ff-only
+
+[mergetool "sublime"]
+    cmd = subl -w $MERGED
+    trustExitCode = false
+[merge]
+    tool = sublime
